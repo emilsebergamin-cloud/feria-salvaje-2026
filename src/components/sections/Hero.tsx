@@ -3,22 +3,25 @@ import Countdown from '../ui/Countdown'
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-full flex flex-col overflow-hidden">
-      {/* Photo background */}
+    <section
+      className="relative w-screen flex flex-col overflow-hidden"
+      style={{ height: '100dvh' }}
+    >
+      {/* Photo background — covers everything including behind browser bars */}
       <img
         src="/assets/fotos/hero.webp"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: 'center 60%' }}
+        className="absolute w-full h-full object-cover"
+        style={{ top: '-5vh', left: 0, right: 0, bottom: '-5vh', height: '110vh', objectPosition: 'center 60%' }}
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/65" style={{ top: '-5vh', bottom: '-5vh', height: '110vh' }} />
 
       {/* Subtle magenta tint */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
+        style={{ top: '-5vh', bottom: '-5vh', height: '110vh', backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
       />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4">
@@ -55,7 +58,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="mt-2 sm:-mt-2"
+          className="-mt-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
