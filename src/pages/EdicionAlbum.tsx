@@ -96,6 +96,7 @@ export default function EdicionAlbum() {
   const prevYear = currentYearIndex > 0 ? edicionYears[currentYearIndex - 1] : null
   const nextYear = currentYearIndex < edicionYears.length - 1 ? edicionYears[currentYearIndex + 1] : null
   const [spread, setSpread] = useState(0)
+  const [mobileIndex, setMobileIndex] = useState(0)
   const [flipAngle, setFlipAngle] = useState(0)
   const [flipType, setFlipType] = useState<'next' | 'prev' | null>(null)
   const [isFlipping, setIsFlipping] = useState(false)
@@ -107,6 +108,7 @@ export default function EdicionAlbum() {
   useEffect(() => {
     cancelAnimationFrame(animRef.current)
     setSpread(0)
+    setMobileIndex(0)
     setFlipAngle(0)
     setFlipType(null)
     setIsFlipping(false)
@@ -186,7 +188,7 @@ export default function EdicionAlbum() {
   const shadowIntensity = Math.abs(flipAngle) / 180 * 0.35
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-[#f8f6f2]">
+    <div className="md:h-screen flex flex-col md:overflow-hidden bg-[#f8f6f2]">
       <Nav />
 
       <div className="flex-1 flex flex-col pt-28 min-h-0">
@@ -238,11 +240,49 @@ export default function EdicionAlbum() {
           </div>
         </div>
 
-        {/* Book + arrows */}
+        {/* Mobile carousel */}
+        {edicion.fotos.length > 0 && (
+          <div className="md:hidden flex-1 flex flex-col min-h-0 px-4 pb-6 pt-2">
+            <div className="flex-1 relative min-h-0">
+              <div className="h-full flex items-center justify-center">
+                <img
+                  src={edicion.fotos[mobileIndex]}
+                  alt={`Foto ${mobileIndex + 1}`}
+                  className="max-h-full max-w-full object-contain rounded-xl"
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-6 pt-4">
+              <button
+                onClick={() => setMobileIndex(i => Math.max(0, i - 1))}
+                disabled={mobileIndex === 0}
+                className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 disabled:opacity-20 disabled:cursor-default shadow-md"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <span className="font-inter text-xs text-texto/30 tabular-nums">
+                {mobileIndex + 1} / {edicion.fotos.length}
+              </span>
+              <button
+                onClick={() => setMobileIndex(i => Math.min(edicion.fotos.length - 1, i + 1))}
+                disabled={mobileIndex >= edicion.fotos.length - 1}
+                className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 disabled:opacity-20 disabled:cursor-default shadow-md"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Desktop Book + arrows */}
         {edicion.fotos.length > 0 ? (
           !imagesLoaded ? (
             // Loading state
-            <div className="flex-1 flex items-center justify-center">
+            <div className="hidden md:flex flex-1 items-center justify-center">
               <div className="flex flex-col items-center gap-4">
                 <div
                   className="w-10 h-10 border-2 border-texto/10 rounded-full animate-spin"
@@ -252,32 +292,7 @@ export default function EdicionAlbum() {
               </div>
             </div>
           ) : (
-            <div className="flex-1 flex flex-col md:flex-row items-center justify-center px-4 pb-8 min-h-0 gap-4 sm:gap-8">
-              {/* Mobile arrows top */}
-              <div className="flex md:hidden items-center gap-6">
-                <button
-                  onClick={goPrev}
-                  disabled={spread === 0 || isFlipping}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default flex-shrink-0 shadow-md"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                </button>
-                <span className="font-inter text-xs text-texto/30 tabular-nums">
-                  {leftIndex + 1}–{Math.min(rightIndex + 1, edicion.fotos.length)} / {edicion.fotos.length}
-                </span>
-                <button
-                  onClick={goNext}
-                  disabled={spread >= totalSpreads - 1 || isFlipping}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default flex-shrink-0 shadow-md"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
-              </div>
-
+            <div className="hidden md:flex flex-1 flex-row items-center justify-center px-4 pb-8 min-h-0 gap-8">
               {/* Desktop left arrow */}
               <button
                 onClick={goPrev}
