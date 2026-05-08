@@ -86,7 +86,7 @@ export default function Stats() {
       onMouseEnter={handleMouseEnter}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-between gap-6 sm:gap-y-8">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-between gap-8 sm:gap-y-8 justify-items-center sm:justify-items-start">
           {stats.map((stat) => (
             <StatItem key={stat.label} {...stat} trigger={trigger} />
           ))}

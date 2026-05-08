@@ -167,13 +167,13 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
 
         {/* Mobile hamburger */}
         <button
-          className={`md:hidden flex flex-col gap-1.5 p-2 ${isHome ? 'ml-auto' : ''}`}
+          className={`md:hidden flex flex-col gap-2 p-3 ${isHome ? 'ml-auto' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`block w-5 h-0.5 transition-all ${showTransparent ? 'bg-white' : 'bg-texto'}`}
+              className={`block w-6 h-[2px] rounded-full transition-all ${showTransparent ? 'bg-white' : 'bg-texto'}`}
             />
           ))}
         </button>

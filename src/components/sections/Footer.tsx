@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-6 bg-navy">
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
+    <footer className="py-8 sm:py-8 px-6 bg-navy">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
         <Link to="/">
           <img
             src="/assets/logos/03_logo_completo_claro.svg"
             alt="Feria Salvaje"
-            className="h-8 w-auto opacity-40 hover:opacity-60 transition-opacity"
+            className="h-10 sm:h-8 w-auto opacity-40 hover:opacity-60 transition-opacity"
           />
         </Link>
 
-        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-4 gap-y-3 sm:gap-y-2">
           {[
             { label: 'Nosotros', to: '/sobre' },
             { label: 'Line-up', to: '/lineup' },
@@ -24,25 +24,25 @@ export default function Footer() {
             <Link
               key={link.label}
               to={link.to}
-              className="font-inter text-[11px] text-white/25 hover:text-magenta transition-colors"
+              className="font-inter text-xs sm:text-[11px] text-white/30 sm:text-white/25 hover:text-magenta transition-colors py-1"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-          <a href="https://www.instagram.com/feriasalvaje" target="_blank" rel="noopener noreferrer" className="font-inter text-[11px] text-white/25 hover:text-magenta transition-colors">
+        <div className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-4 gap-y-3 sm:gap-y-2">
+          <a href="https://www.instagram.com/feriasalvaje" target="_blank" rel="noopener noreferrer" className="font-inter text-xs sm:text-[11px] text-white/30 sm:text-white/25 hover:text-magenta transition-colors py-1">
             Instagram
           </a>
           <span className="text-white/10 hidden sm:inline">|</span>
-          <a href="https://feriasalvaje.empretienda.com.ar" target="_blank" rel="noopener noreferrer" className="font-inter text-[11px] text-white/25 hover:text-magenta transition-colors">
+          <a href="https://feriasalvaje.empretienda.com.ar" target="_blank" rel="noopener noreferrer" className="font-inter text-xs sm:text-[11px] text-white/30 sm:text-white/25 hover:text-magenta transition-colors py-1">
             Entradas
           </a>
           <span className="text-white/10 hidden sm:inline">|</span>
           <a
             href="mailto:feriasalvaje@gmail.com"
-            className="font-inter text-[11px] text-white/25 hover:text-white/50 transition-colors"
+            className="font-inter text-xs sm:text-[11px] text-white/30 sm:text-white/25 hover:text-white/50 transition-colors py-1"
           >
             feriasalvaje@gmail.com
           </a>

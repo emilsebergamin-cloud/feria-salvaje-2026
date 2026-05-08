@@ -201,7 +201,7 @@ export default function Sobre() {
 
               <a
                 href="https://feriasalvaje.empretienda.com.ar" target="_blank" rel="noopener noreferrer"
-                className="inline-block mt-10 px-8 py-3.5 bg-amarillo text-texto font-inter font-semibold text-sm uppercase tracking-wider rounded-full hover:bg-magenta hover:text-white transition-colors self-start"
+                className="inline-block mt-10 w-full sm:w-auto text-center px-8 py-4 sm:py-3.5 bg-amarillo text-texto font-inter font-semibold text-sm uppercase tracking-wider rounded-full hover:bg-magenta hover:text-white transition-colors sm:self-start"
               >
                 Conseguí tus entradas
               </a>

@@ -22,7 +22,7 @@ export default function Exponer() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSdpL5JBUswQznjj7Mn-OT1a1Z8wFun2a4FkaLuem_7vvXfsyg/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-10 px-8 py-3.5 bg-magenta text-white font-inter font-bold text-sm uppercase tracking-[0.15em] rounded-full transition-all duration-300"
+              className="inline-block mt-10 w-full sm:w-auto text-center px-8 py-4 sm:py-3.5 bg-magenta text-white font-inter font-bold text-sm uppercase tracking-[0.15em] rounded-full transition-all duration-300"
             >
               Completar formulario
             </a>

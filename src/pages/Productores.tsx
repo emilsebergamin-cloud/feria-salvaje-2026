@@ -5,9 +5,9 @@ import ProductoresSection from '../components/sections/Productores'
 export default function ProductoresPage() {
   return (
     <PageLayout>
-      <section className="pt-28 sm:pt-36 pb-20 sm:pb-28 px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto relative md:min-h-[380px] sm:md:min-h-[440px]">
-          <div className="relative z-10 max-w-xl pt-10 sm:pt-16">
+      <section className="pt-10 sm:pt-28 md:pt-36 pb-14 sm:pb-20 md:pb-28 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative md:min-h-[380px] lg:min-h-[440px]">
+          <div className="relative z-10 max-w-xl pt-0 sm:pt-10 md:pt-16">
             <span className="font-inter text-xs font-semibold text-turquesa uppercase tracking-[0.3em]">
               Quiénes participaron
             </span>

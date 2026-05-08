@@ -17,13 +17,13 @@ function ProductorCard({ productor, index }: { productor: Productor; index: numb
 
   return (
     <motion.div
-      className="rounded-xl border border-texto/5 px-5 py-4 transition-all duration-300 cursor-default group"
+      className="rounded-xl border border-texto/5 px-5 py-4 sm:py-4 transition-all duration-300 cursor-default group"
       style={{ backgroundColor: 'white' }}
       whileHover={{ y: -5, scale: 1.03, backgroundColor: color + '45' }}
                   transition={{ duration: 0.15 }}
     >
       <p
-        className="font-inter text-sm font-semibold text-texto transition-colors duration-300"
+        className="font-inter text-base sm:text-sm font-semibold text-texto transition-colors duration-300"
         style={{ ['--hover-color' as string]: color }}
       >
         <span className="group-hover:hidden">{productor.nombre}</span>
