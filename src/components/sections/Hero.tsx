@@ -3,25 +3,25 @@ import Countdown from '../ui/Countdown'
 
 export default function Hero() {
   return (
-    <section
-      className="relative w-screen flex flex-col overflow-hidden"
-      style={{ height: '100dvh' }}
-    >
-      {/* Photo background — covers everything including behind browser bars */}
-      <img
-        src="/assets/fotos/hero.webp"
-        alt=""
-        className="absolute w-full h-full object-cover"
-        style={{ top: '-5vh', left: 0, right: 0, bottom: '-5vh', height: '110vh', objectPosition: 'center 60%' }}
+    <section className="relative w-full min-h-dvh flex flex-col overflow-hidden">
+      {/* Photo background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/assets/fotos/hero.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+        }}
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/65" style={{ top: '-5vh', bottom: '-5vh', height: '110vh' }} />
+      <div className="absolute inset-0 bg-black/65" />
 
       {/* Subtle magenta tint */}
       <div
         className="absolute inset-0"
-        style={{ top: '-5vh', bottom: '-5vh', height: '110vh', backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
+        style={{ backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
       />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4">
@@ -32,24 +32,16 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <img
-            src="/assets/logos/logo_sin_alas.svg"
-            alt="Feria Salvaje"
-            className="w-full h-full"
-          />
-
+          <img src="/assets/logos/logo_sin_alas.svg" alt="Feria Salvaje" className="w-full h-full" />
           <motion.img
-            src="/assets/logos/ala_izq.svg"
-            alt=""
+            src="/assets/logos/ala_izq.svg" alt=""
             className="absolute inset-0 w-full h-full pointer-events-none"
             style={{ transformOrigin: '47% 40%' }}
             animate={{ rotate: [0, -8, 0] }}
             transition={{ duration: 2, ease: 'easeInOut', repeat: Infinity }}
           />
-
           <motion.img
-            src="/assets/logos/ala_der.svg"
-            alt=""
+            src="/assets/logos/ala_der.svg" alt=""
             className="absolute inset-0 w-full h-full pointer-events-none"
             style={{ transformOrigin: '54% 43%' }}
             animate={{ rotate: [0, 8, 0] }}

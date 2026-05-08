@@ -58,12 +58,12 @@ export default function Productores() {
     <section className="pb-24 sm:pb-32 px-6 bg-white scroll-mt-28" id="productores">
       <div className="max-w-6xl mx-auto">
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 p-1.5 bg-texto/[0.03] rounded-full w-fit">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2 p-2 sm:p-1.5 bg-texto/[0.03] rounded-2xl sm:rounded-full w-full sm:w-fit">
           {tabs.map((tab, i) => (
             <button
               key={tab.label}
               onClick={() => setActiveTab(i)}
-              className="px-5 py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300"
+              className="px-5 py-3 sm:py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 w-full sm:w-auto"
               style={{
                 backgroundColor: activeTab === i ? tab.color : 'transparent',
                 color: activeTab === i ? '#131823' : 'rgba(19,24,35,0.45)',
@@ -76,7 +76,7 @@ export default function Productores() {
         </div>
 
         {/* Grid */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {tabs[activeTab].data.map((p, i) => (
             <ProductorCard key={p.nombre} productor={p} index={i} />
           ))}

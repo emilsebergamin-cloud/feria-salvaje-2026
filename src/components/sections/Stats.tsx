@@ -36,14 +36,14 @@ function StatItem({ value, label, color, trigger }: { value: number; label: stri
   }
 
   return (
-    <div className="flex items-baseline gap-2 sm:gap-3">
+    <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-0.5 sm:gap-3">
       <span
-        className="font-inter text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none"
+        className="font-inter text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none"
         style={{ color }}
       >
         +{count.toLocaleString()}
       </span>
-      <span className="font-inter text-sm sm:text-base text-white/40 font-light">
+      <span className="font-inter text-xs sm:text-base text-white/40 font-light">
         {label}
       </span>
     </div>

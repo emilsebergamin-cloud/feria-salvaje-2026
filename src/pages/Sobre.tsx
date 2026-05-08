@@ -13,7 +13,7 @@ export default function Sobre() {
   return (
     <PageLayout>
       {/* Hero — foto full width con overlay */}
-      <section className="group relative h-[70vh] min-h-[480px] overflow-hidden">
+      <section className="group relative h-[50vh] sm:h-[70vh] min-h-[320px] sm:min-h-[480px] max-h-[70vh] overflow-hidden">
         <img
           src="/assets/fotos/nosotros.webp"
           alt="Gente degustando vinos en Feria Salvaje"
@@ -42,7 +42,7 @@ export default function Sobre() {
       </section>
 
       {/* Banner marquee */}
-      <div className="w-full overflow-hidden py-4 bg-magenta">
+      <div className="w-full max-w-[100vw] overflow-hidden py-3 sm:py-4 bg-magenta">
         <div className="flex animate-marquee whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
             <span
