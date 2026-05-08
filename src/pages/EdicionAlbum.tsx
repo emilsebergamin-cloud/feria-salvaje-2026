@@ -192,8 +192,51 @@ export default function EdicionAlbum() {
       <Nav />
 
       <div className="flex-1 flex flex-col pt-28 min-h-0">
-        {/* Header */}
-        <div className="flex items-center justify-between px-6 sm:px-10 pb-4 flex-shrink-0">
+        {/* Mobile header — simplified */}
+        <div className="flex md:hidden items-center justify-between px-4 pb-3 flex-shrink-0">
+          <Link
+            to="/ediciones"
+            className="font-inter text-xs font-semibold text-texto/30 uppercase tracking-[0.15em] hover:text-magenta transition-colors flex items-center gap-1"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </Link>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => prevYear && navigate(`/ediciones/${prevYear}`)}
+              disabled={!prevYear}
+              className="w-8 h-8 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 disabled:opacity-15 disabled:cursor-default"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <div className="text-center">
+              <h1 className="font-inter text-2xl font-black leading-none" style={{ color: edicion.color }}>
+                {edicion.title}
+              </h1>
+              <span className="font-inter text-[10px] text-texto/30 font-light">
+                {edicion.desc}
+              </span>
+            </div>
+            <button
+              onClick={() => nextYear && navigate(`/ediciones/${nextYear}`)}
+              disabled={!nextYear}
+              className="w-8 h-8 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 disabled:opacity-15 disabled:cursor-default"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="w-6" />
+        </div>
+
+        {/* Desktop header */}
+        <div className="hidden md:flex items-center justify-between px-10 pb-4 flex-shrink-0">
           <div className="flex items-center gap-4">
             <Link
               to="/ediciones"
@@ -205,50 +248,49 @@ export default function EdicionAlbum() {
               Ediciones
             </Link>
             <span className="text-texto/10">|</span>
-            <h1 className="font-inter text-xl sm:text-2xl md:text-3xl font-black leading-none" style={{ color: edicion.color }}>
+            <h1 className="font-inter text-2xl md:text-3xl font-black leading-none" style={{ color: edicion.color }}>
               {edicion.title}
             </h1>
-            <span className="font-inter text-xs text-texto/30 font-light hidden sm:inline">
+            <span className="font-inter text-xs text-texto/30 font-light">
               {edicion.desc}
             </span>
           </div>
 
-          <div className="flex items-center gap-5">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => prevYear && navigate(`/ediciones/${prevYear}`)}
-                disabled={!prevYear}
-                className="w-7 h-7 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 hover:text-magenta hover:border-magenta transition-all disabled:opacity-15 disabled:cursor-default"
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <span className="font-inter text-[11px] text-texto/30 font-semibold uppercase tracking-[0.1em]">
-                Ediciones
-              </span>
-              <button
-                onClick={() => nextYear && navigate(`/ediciones/${nextYear}`)}
-                disabled={!nextYear}
-                className="w-7 h-7 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 hover:text-magenta hover:border-magenta transition-all disabled:opacity-15 disabled:cursor-default"
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => prevYear && navigate(`/ediciones/${prevYear}`)}
+              disabled={!prevYear}
+              className="w-7 h-7 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 hover:text-magenta hover:border-magenta transition-all disabled:opacity-15 disabled:cursor-default"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <span className="font-inter text-[11px] text-texto/30 font-semibold uppercase tracking-[0.1em]">
+              Ediciones
+            </span>
+            <button
+              onClick={() => nextYear && navigate(`/ediciones/${nextYear}`)}
+              disabled={!nextYear}
+              className="w-7 h-7 rounded-full border border-texto/10 flex items-center justify-center text-texto/30 hover:text-magenta hover:border-magenta transition-all disabled:opacity-15 disabled:cursor-default"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </div>
         </div>
 
         {/* Mobile carousel */}
         {edicion.fotos.length > 0 && (
           <div className="md:hidden flex flex-col items-center px-4 pt-2 pb-20">
-            <img
-              src={edicion.fotos[mobileIndex]}
-              alt={`Foto ${mobileIndex + 1}`}
-              className="w-full rounded-xl object-cover"
-              style={{ maxHeight: '55vh' }}
-            />
+            <div className="w-full rounded-xl overflow-hidden" style={{ height: '55vh' }}>
+              <img
+                src={edicion.fotos[mobileIndex]}
+                alt={`Foto ${mobileIndex + 1}`}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
             <div className="flex items-center justify-center gap-6 mt-4">
               <button
                 onClick={() => setMobileIndex(i => Math.max(0, i - 1))}
