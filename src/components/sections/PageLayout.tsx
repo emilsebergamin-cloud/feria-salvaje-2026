@@ -1,6 +1,6 @@
 import Nav from './Nav'
-import Newsletter from './Newsletter'
 import Footer from './Footer'
+import MiniCountdown from '../ui/MiniCountdown'
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
       <main className="pt-20">
         {children}
       </main>
-      <Newsletter />
+      <MiniCountdown />
       <Footer />
     </>
   )

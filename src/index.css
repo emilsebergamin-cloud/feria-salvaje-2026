@@ -2,13 +2,15 @@
 
 @theme {
   --color-magenta: #BE008D;
-  --color-amarillo: #FFBB02;
+  --color-amarillo: #FFF500;
   --color-turquesa: #42B7A4;
+  --color-rojo: #FF4D33;
+  --color-azul: #4677FF;
   --color-navy: #252653;
   --color-texto: #131823;
 
   --font-inter: "Inter", sans-serif;
-  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+  --font-space-mono: "Space Mono", monospace;
 }
 
 html {

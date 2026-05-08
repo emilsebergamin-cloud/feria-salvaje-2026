@@ -1,27 +1,14 @@
-import { motion } from 'framer-motion'
-
 const sponsors = ['Stanley', 'Marca 2', 'Marca 3', 'Marca 4', 'Marca 5', 'Marca 6']
 
 export default function Auspiciantes() {
   return (
     <section className="py-20 sm:py-24 px-6 bg-white border-y border-texto/5">
       <div className="max-w-5xl mx-auto text-center">
-        <motion.p
-          className="font-inter text-xs font-semibold text-texto/30 uppercase tracking-[0.3em]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
+        <p className="font-inter text-xs font-semibold text-texto/30 uppercase tracking-[0.3em]">
           Nos acompañan
-        </motion.p>
+        </p>
 
-        <motion.div
-          className="mt-10 flex flex-wrap items-center justify-center gap-10 sm:gap-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
           {sponsors.map((name) => (
             <div
               key={name}
@@ -32,7 +19,7 @@ export default function Auspiciantes() {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

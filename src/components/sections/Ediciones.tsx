@@ -11,30 +11,21 @@ export default function Ediciones() {
   return (
     <section className="py-24 sm:py-32 px-6 bg-magenta/[0.04]" id="ediciones">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
+        <div>
           <span className="font-inter text-xs font-semibold text-magenta uppercase tracking-[0.3em]">
             Nuestra historia
           </span>
           <h2 className="mt-4 font-inter text-4xl sm:text-5xl md:text-6xl font-extrabold text-texto leading-tight">
             Ediciones anteriores
           </h2>
-        </motion.div>
+        </div>
 
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
-          {ediciones.map((ed, i) => (
+          {ediciones.map((ed) => (
             <motion.a
               key={ed.year}
               href="#"
               className={`${ed.color} rounded-2xl p-8 sm:p-10 flex flex-col justify-end aspect-[4/5] relative overflow-hidden group cursor-pointer`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -6 }}
             >
               {/* Hover overlay */}

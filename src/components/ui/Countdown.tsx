@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
-const TARGET_DATE = new Date('2026-10-01T00:00:00-03:00')
+const TARGET_DATE = new Date('2026-10-10T00:00:00-03:00')
 
 function calcTimeLeft() {
   const now = new Date()
@@ -17,8 +16,6 @@ function calcTimeLeft() {
   }
 }
 
-const labels = ['Días', 'Horas', 'Min', 'Seg'] as const
-
 export default function Countdown() {
   const [time, setTime] = useState(calcTimeLeft)
 
@@ -27,32 +24,29 @@ export default function Countdown() {
     return () => clearInterval(interval)
   }, [])
 
-  const values = [time.dias, time.horas, time.minutos, time.segundos]
-
   return (
-    <div className="flex items-center gap-2.5 sm:gap-3">
-      {labels.map((label, i) => (
-        <div key={label} className="flex items-center gap-2.5 sm:gap-3">
-          <div className="flex flex-col items-center px-3.5 sm:px-5 py-3 sm:py-4 rounded-lg border border-white/15 bg-white/[0.06] backdrop-blur-sm">
-            <motion.span
-              key={values[i]}
-              className="font-inter text-xl sm:text-3xl font-bold text-white tabular-nums leading-none"
-              initial={{ y: -3, opacity: 0.6 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              {String(values[i]).padStart(2, '0')}
-            </motion.span>
-            <span className="font-inter text-[10px] sm:text-[11px] text-white/40 uppercase tracking-[0.15em] mt-1.5">
-              {label}
-            </span>
-          </div>
+    <div className="flex flex-col items-center">
+      {/* Numbers — clean, no container */}
+      <div className="flex items-baseline gap-1.5 text-white/90">
+        <span className="font-inter text-xl sm:text-2xl md:text-3xl font-bold tabular-nums">{time.dias}</span>
+        <span className="font-inter text-[9px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">d</span>
+        <span className="font-inter text-xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.horas).padStart(2, '0')}</span>
+        <span className="font-inter text-[9px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">h</span>
+        <span className="font-inter text-xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.minutos).padStart(2, '0')}</span>
+        <span className="font-inter text-[9px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">m</span>
+        <span className="font-inter text-xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.segundos).padStart(2, '0')}</span>
+        <span className="font-inter text-[9px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide">s</span>
+      </div>
 
-          {i < 3 && (
-            <span className="text-white/20 text-base sm:text-lg font-light select-none">:</span>
-          )}
-        </div>
-      ))}
+      {/* CTA */}
+      <a
+        href="https://feriasalvaje.empretienda.com.ar"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-5 px-6 sm:px-8 py-3 sm:py-3.5 bg-magenta text-white font-inter font-bold text-xs sm:text-sm uppercase tracking-[0.15em] rounded-full transition-all duration-300"
+      >
+        Comprá tus entradas
+      </a>
     </div>
   )
 }
