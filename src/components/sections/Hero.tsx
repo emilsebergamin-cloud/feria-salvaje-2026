@@ -3,7 +3,7 @@ import Countdown from '../ui/Countdown'
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen flex flex-col overflow-hidden">
+    <section className="relative w-full h-dvh flex flex-col overflow-hidden">
       {/* Photo background */}
       <img
         src="/assets/fotos/hero.webp"
