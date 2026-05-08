@@ -3,11 +3,23 @@ import Countdown from '../ui/Countdown'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-dvh flex flex-col overflow-hidden" style={{ backgroundColor: '#1a0a14' }}>
-      {/* Photo background — extends beyond viewport to cover mobile browser bar areas */}
+    <section
+      className="relative w-full flex flex-col overflow-hidden"
+      style={{
+        minHeight: '100dvh',
+        paddingTop: 'env(safe-area-inset-top, 0px)',
+        paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+        backgroundColor: '#1a0a14',
+      }}
+    >
+      {/* Photo background — extends beyond to cover safe areas */}
       <div
-        className="absolute -inset-4"
+        className="absolute"
         style={{
+          top: 'calc(-1 * env(safe-area-inset-top, 16px) - 16px)',
+          left: '-16px',
+          right: '-16px',
+          bottom: 'calc(-1 * env(safe-area-inset-bottom, 16px) - 16px)',
           backgroundImage: 'url(/assets/fotos/hero.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
@@ -16,12 +28,28 @@ export default function Hero() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute -inset-4 bg-black/65" />
+      <div
+        className="absolute"
+        style={{
+          top: 'calc(-1 * env(safe-area-inset-top, 16px) - 16px)',
+          left: '-16px',
+          right: '-16px',
+          bottom: 'calc(-1 * env(safe-area-inset-bottom, 16px) - 16px)',
+          backgroundColor: 'rgba(0,0,0,0.65)',
+        }}
+      />
 
       {/* Subtle magenta tint */}
       <div
-        className="absolute -inset-4"
-        style={{ backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
+        className="absolute"
+        style={{
+          top: 'calc(-1 * env(safe-area-inset-top, 16px) - 16px)',
+          left: '-16px',
+          right: '-16px',
+          bottom: 'calc(-1 * env(safe-area-inset-bottom, 16px) - 16px)',
+          backgroundColor: 'rgba(190, 0, 141, 0.15)',
+          mixBlendMode: 'screen',
+        }}
       />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4">

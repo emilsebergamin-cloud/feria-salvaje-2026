@@ -59,6 +59,10 @@ body {
 }
 
 @media (min-width: 640px) {
+  .prod-tab {
+    border: none !important;
+    color: rgba(19,24,35,0.45) !important;
+  }
   .prod-tab-active {
     background-color: var(--tab-color, #BE008D) !important;
     color: #131823 !important;
