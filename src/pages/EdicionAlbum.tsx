@@ -242,17 +242,14 @@ export default function EdicionAlbum() {
 
         {/* Mobile carousel */}
         {edicion.fotos.length > 0 && (
-          <div className="md:hidden flex-1 flex flex-col min-h-0 px-4 pb-6 pt-2">
-            <div className="flex-1 relative min-h-0">
-              <div className="h-full flex items-center justify-center">
-                <img
-                  src={edicion.fotos[mobileIndex]}
-                  alt={`Foto ${mobileIndex + 1}`}
-                  className="max-h-full max-w-full object-contain rounded-xl"
-                />
-              </div>
-            </div>
-            <div className="flex items-center justify-center gap-6 pt-4">
+          <div className="md:hidden flex flex-col items-center px-4 pt-2 pb-20">
+            <img
+              src={edicion.fotos[mobileIndex]}
+              alt={`Foto ${mobileIndex + 1}`}
+              className="w-full rounded-xl object-cover"
+              style={{ maxHeight: '55vh' }}
+            />
+            <div className="flex items-center justify-center gap-6 mt-4">
               <button
                 onClick={() => setMobileIndex(i => Math.max(0, i - 1))}
                 disabled={mobileIndex === 0}
