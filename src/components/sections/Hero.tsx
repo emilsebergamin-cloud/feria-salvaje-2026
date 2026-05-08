@@ -3,10 +3,10 @@ import Countdown from '../ui/Countdown'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-dvh flex flex-col overflow-hidden">
-      {/* Photo background */}
+    <section className="relative w-full min-h-dvh flex flex-col overflow-hidden" style={{ backgroundColor: '#1a0a14' }}>
+      {/* Photo background — extends beyond viewport to cover mobile browser bar areas */}
       <div
-        className="absolute inset-0"
+        className="absolute -inset-4"
         style={{
           backgroundImage: 'url(/assets/fotos/hero.webp)',
           backgroundSize: 'cover',
@@ -16,11 +16,11 @@ export default function Hero() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute -inset-4 bg-black/65" />
 
       {/* Subtle magenta tint */}
       <div
-        className="absolute inset-0"
+        className="absolute -inset-4"
         style={{ backgroundColor: 'rgba(190, 0, 141, 0.15)', mixBlendMode: 'screen' }}
       />
 

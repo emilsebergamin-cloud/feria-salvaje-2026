@@ -57,3 +57,10 @@ body {
     animation: marquee 10s linear infinite;
   }
 }
+
+@media (min-width: 640px) {
+  .prod-tab-active {
+    background-color: var(--tab-color, #BE008D) !important;
+    color: #131823 !important;
+  }
+}

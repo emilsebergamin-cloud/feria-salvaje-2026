@@ -4,7 +4,7 @@ const stats = [
   { value: 90, label: 'productores', color: '#BE008D' },
   { value: 300, label: 'etiquetas', color: '#42B7A4' },
   { value: 4000, label: 'asistentes', color: '#FFF500' },
-  { value: 8, label: 'países', color: '#BE008D' },
+  { value: 8, label: 'países', color: '#42B7A4' },
 ]
 
 function animateCount(
@@ -36,14 +36,14 @@ function StatItem({ value, label, color, trigger }: { value: number; label: stri
   }
 
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-0.5 sm:gap-3">
+    <div className="flex flex-col items-center sm:flex-row sm:items-baseline gap-1 sm:gap-3 text-center sm:text-left">
       <span
-        className="font-inter text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none"
+        className="font-inter text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none"
         style={{ color }}
       >
         +{count.toLocaleString()}
       </span>
-      <span className="font-inter text-xs sm:text-base text-white/40 font-light">
+      <span className="font-inter text-[11px] sm:text-base text-white/40 font-light">
         {label}
       </span>
     </div>

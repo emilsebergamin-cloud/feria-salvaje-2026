@@ -58,21 +58,25 @@ export default function Productores() {
     <section className="pb-24 sm:pb-32 px-6 bg-white scroll-mt-28" id="productores">
       <div className="max-w-6xl mx-auto">
         {/* Tabs */}
-        <div className="flex flex-col sm:flex-row flex-wrap gap-2 p-2 sm:p-1.5 bg-texto/[0.03] rounded-2xl sm:rounded-full w-full sm:w-fit">
-          {tabs.map((tab, i) => (
-            <button
-              key={tab.label}
-              onClick={() => setActiveTab(i)}
-              className="px-5 py-3 sm:py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 w-full sm:w-auto"
-              style={{
-                backgroundColor: activeTab === i ? tab.color : 'transparent',
-                color: activeTab === i ? '#131823' : 'rgba(19,24,35,0.45)',
-              }}
-            >
-              {tab.label}
-              <span className="ml-1.5 text-xs opacity-60">{tab.data.length}</span>
-            </button>
-          ))}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2.5 sm:gap-2 sm:p-1.5 sm:bg-texto/[0.03] sm:rounded-full w-full sm:w-fit">
+          {tabs.map((tab, i) => {
+            const isActive = activeTab === i
+            return (
+              <button
+                key={tab.label}
+                onClick={() => setActiveTab(i)}
+                className={`prod-tab px-5 py-3 sm:py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 w-full sm:w-auto ${
+                  isActive
+                    ? 'prod-tab-active border-[1.5px] border-magenta bg-magenta text-white sm:border-0'
+                    : 'border-[1.5px] border-magenta/30 bg-transparent text-magenta sm:border-0 sm:text-texto/45'
+                }`}
+                style={isActive ? { ['--tab-color' as string]: tab.color } : {}}
+              >
+                {tab.label}
+                <span className="ml-1.5 text-xs opacity-60">{tab.data.length}</span>
+              </button>
+            )
+          })}
         </div>
 
         {/* Grid */}
