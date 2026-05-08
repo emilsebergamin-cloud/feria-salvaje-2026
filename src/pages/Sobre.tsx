@@ -17,7 +17,9 @@ export default function Sobre() {
         <img
           src="/assets/fotos/nosotros.webp"
           alt="Gente degustando vinos en Feria Salvaje"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-texto/10"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-texto/80 via-texto/30 to-transparent" />
 
@@ -118,16 +120,16 @@ export default function Sobre() {
           {/* Mosaico de fotos */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp}>
-              <img src="/assets/fotos/copa-tinto.webp" alt="Copa de vino tinto Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/assets/fotos/copa-tinto.webp" alt="Copa de vino tinto Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              <img src="/assets/fotos/encuentro.webp" alt="Productores y visitantes conversando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/assets/fotos/encuentro.webp" alt="Productores y visitantes conversando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              <img src="/assets/fotos/degustacion.webp" alt="Grupo de personas degustando vinos" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/assets/fotos/degustacion.webp" alt="Grupo de personas degustando vinos" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <img src="/assets/fotos/servicio.webp" alt="Sirviendo vino natural en copa Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/assets/fotos/servicio.webp" alt="Sirviendo vino natural en copa Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
             </motion.div>
           </div>
         </div>
@@ -142,7 +144,7 @@ export default function Sobre() {
             <img
               src="/assets/fotos/mesa-vinos.webp"
               alt="Personas eligiendo vinos en una mesa de productores"
-              className="w-full aspect-[4/5] object-cover"
+              className="w-full aspect-[4/5] object-cover bg-texto/10" loading="lazy"
             />
           </motion.div>
 
@@ -174,7 +176,7 @@ export default function Sobre() {
           <img
             src="/assets/fotos/experiencia.webp"
             alt="La experiencia Feria Salvaje"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-texto/20" loading="lazy"
           />
           <div className="absolute inset-0 bg-texto/75" />
         </div>

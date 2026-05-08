@@ -65,14 +65,22 @@ export default function Productores() {
               <button
                 key={tab.label}
                 onClick={() => setActiveTab(i)}
-                className={`prod-tab px-5 py-3 sm:py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 w-full sm:w-auto sm:border-0 ${
+                className={`prod-tab px-5 py-3.5 sm:py-2.5 rounded-full font-inter text-sm transition-all duration-300 w-full sm:w-auto sm:border-0 ${
                   isActive
-                    ? 'prod-tab-active border-[1.5px] border-magenta bg-magenta text-white font-bold'
-                    : 'border-[1.5px] bg-transparent'
+                    ? 'prod-tab-active border-[1.5px] font-bold'
+                    : 'border-[1.5px] bg-transparent font-medium'
                 }`}
                 style={isActive
-                  ? { ['--tab-color' as string]: tab.color }
-                  : { borderColor: tab.color + '40', color: tab.color }
+                  ? {
+                      ['--tab-color' as string]: tab.color,
+                      backgroundColor: tab.color,
+                      borderColor: tab.color,
+                      color: tab.color === '#FFF500' ? '#131823' : '#ffffff',
+                    }
+                  : {
+                      borderColor: tab.color === '#FFF500' ? tab.color + '80' : tab.color + '40',
+                      color: tab.color === '#FFF500' ? '#b3aa00' : tab.color,
+                    }
                 }
               >
                 {tab.label}
