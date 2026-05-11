@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import Countdown from '../ui/Countdown'
 
 export default function Hero() {
@@ -79,14 +80,20 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Countdown only (no CTA) */}
+        {/* Countdown + explore link */}
         <motion.div
-          className="mt-8 sm:-mt-2 w-full sm:w-auto flex flex-col items-center"
+          className="mt-8 sm:-mt-2 w-full sm:w-auto flex flex-col items-center gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <Countdown />
+          <Link
+            to="/sobre"
+            className="font-inter text-[11px] sm:text-xs text-white/35 uppercase tracking-[0.2em] font-medium border border-white/10 rounded-full px-5 py-2 hover:text-white/70 hover:border-white/25 transition-all duration-300"
+          >
+            Conocé la feria
+          </Link>
         </motion.div>
 
       </div>
