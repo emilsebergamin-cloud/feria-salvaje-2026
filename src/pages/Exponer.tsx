@@ -10,9 +10,9 @@ export default function Exponer() {
             <span className="font-inter text-xs font-semibold text-turquesa uppercase tracking-[0.3em]">
               Sumate a Salvaje
             </span>
-            <h1 className="mt-4 font-inter text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[1.1]">
+            <h1 className="mt-4 font-display text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[1.1]">
               ¿Querés exponer<br />
-              <span className="text-turquesa">o auspiciar?</span>
+              <span className="text-turquesa italic">o auspiciar?</span>
             </h1>
             <p className="mt-6 font-inter text-lg text-texto/50 font-light max-w-2xl">
               Si sos productor, elaborador, o tenés una marca afín al mundo del vino natural, nos encantaría conocerte. Completá el formulario y nos ponemos en contacto.
@@ -33,7 +33,8 @@ export default function Exponer() {
             alt=""
             className="hidden md:block w-[350px] lg:w-[450px]"
             initial={{ x: 200, opacity: 0 }}
-            animate={{ x: 0, opacity: 0.35 }}
+            whileInView={{ x: 0, opacity: 0.35 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           />
         </div>

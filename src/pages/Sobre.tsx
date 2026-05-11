@@ -15,13 +15,14 @@ export default function Sobre() {
       {/* Hero — foto full width con overlay */}
       <section className="group relative h-[50vh] sm:h-[70vh] min-h-[320px] sm:min-h-[480px] max-h-[70vh] overflow-hidden">
         <img
-          src="/assets/fotos/nosotros.webp"
-          alt="Gente degustando vinos en Feria Salvaje"
+          src="/assets/fotos/nosotros-comunidad.webp"
+          alt="Comunidad degustando vinos en Feria Salvaje"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-texto/10"
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-texto/80 via-texto/30 to-transparent" />
+        <div className="absolute inset-0 bg-texto/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-texto/85 via-texto/40 to-transparent" />
 
         <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-14 sm:pb-20">
           <div className="max-w-6xl mx-auto w-full">
@@ -32,12 +33,12 @@ export default function Sobre() {
               Nosotros
             </motion.span>
             <motion.h1
-              className="mt-4 font-inter text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[0.95]"
+              className="mt-4 font-display text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[0.95]"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.1 }}
             >
               Más que un evento,<br />
-              <span className="text-turquesa">una comunidad.</span>
+              <span className="text-turquesa italic">una comunidad.</span>
             </motion.h1>
           </div>
         </div>
@@ -64,8 +65,7 @@ export default function Sobre() {
             className="font-inter text-xl sm:text-2xl leading-relaxed text-texto/70 font-light"
             {...fadeUp}
           >
-            Un espacio donde lo humano, lo sensible y lo colectivo toman protagonismo.
-            Donde la curiosidad importa más que la etiqueta y el encuentro vale más que la transacción.
+            Un espacio único para conocer vinos únicos. Donde la curiosidad y el encuentro son protagonistas. Donde potenciamos lo humano, sensible y colectivo.
           </motion.p>
 
           <motion.div
@@ -120,16 +120,16 @@ export default function Sobre() {
           {/* Mosaico de fotos */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp}>
-              <img src="/assets/fotos/copa-tinto.webp" alt="Copa de vino tinto Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
+              <img src="/assets/fotos/encuentro.webp" alt="Visitantes conversando en la feria" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10 saturate-[0.85] brightness-[0.95] sepia-[0.08]" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              <img src="/assets/fotos/encuentro.webp" alt="Productores y visitantes conversando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
+              <img src="/assets/fotos/servicio.webp" alt="Sirviendo vino naranjo en copa Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10 saturate-[0.85] brightness-[0.95] sepia-[0.08]" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              <img src="/assets/fotos/degustacion.webp" alt="Grupo de personas degustando vinos" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
+              <img src="/assets/fotos/nosotros.webp" alt="Gente en Feria Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10 saturate-[0.85] brightness-[0.95] sepia-[0.08]" loading="lazy" />
             </motion.div>
             <motion.div className="rounded-xl overflow-hidden aspect-[3/4]" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <img src="/assets/fotos/servicio.webp" alt="Sirviendo vino natural en copa Salvaje" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10" loading="lazy" />
+              <img src="/assets/ediciones/2023/14.webp" alt="Botellas de vino natural sobre aguayo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 bg-texto/10 saturate-[0.85] brightness-[0.95] sepia-[0.08]" loading="lazy" />
             </motion.div>
           </div>
         </div>
@@ -139,17 +139,17 @@ export default function Sobre() {
 
       {/* Valores — foto + texto */}
       <section id="valores" className="py-20 sm:py-28 px-6 scroll-mt-28">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:items-stretch items-start">
           <motion.div className="rounded-2xl overflow-hidden" {...fadeUp}>
             <img
-              src="/assets/fotos/mesa-vinos.webp"
+              src="/assets/fotos/mesa-vinos-hd.webp"
               alt="Personas eligiendo vinos en una mesa de productores"
-              className="w-full aspect-[4/5] object-cover bg-texto/10" loading="lazy"
+              className="w-full h-full object-cover bg-texto/10" loading="lazy"
             />
           </motion.div>
 
           <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-            <span className="font-inter text-xs font-semibold text-texto/40 uppercase tracking-[0.3em]">
+            <span className="font-inter text-xs font-semibold text-texto/40 uppercase tracking-[0.3em] md:-mt-0.5 md:block">
               Nuestros valores
             </span>
             <div className="mt-4 w-12 h-0.5 bg-magenta/40" />
@@ -158,14 +158,18 @@ export default function Sobre() {
               Sabemos que hablar de "vinos naturales" hoy no es simple. No hay información ni reglas claras, por eso asumimos un rol activo: investigar, preguntar, viajar, probar y construir el criterio más acorde e inclusivo posible.
             </p>
             <p className="mt-6 font-inter text-lg sm:text-xl leading-relaxed text-texto/70 font-light">
-              Nos interesa representar productores que cultivan y se vinculan con la tierra de forma sana, con respeto, visión y cuidado; que fermentan espontáneamente sus vinos usando únicamente levaduras nativas. <strong className="text-texto font-medium">No aceptamos el uso de aditivos enológicos.</strong>
+              <strong className="text-texto font-medium">Nos interesa representar productores que cultivan y se vinculan con la tierra de forma sana, con respeto, visión y cuidado; que fermentan espontáneamente sus vinos usando únicamente levaduras nativas.</strong>
+            </p>
+            <p className="mt-6 font-inter text-lg sm:text-xl leading-relaxed text-texto/70 font-light">
+              No aceptamos el uso de aditivos enológicos como levaduras industriales seleccionadas, enzimas, acidificantes, estabilizantes, colorantes, saborizantes, pasteurizantes ni clarificantes.
             </p>
 
-            <div className="mt-8 p-5 rounded-xl bg-turquesa/10 border border-turquesa/20 hover:bg-turquesa/15 transition-colors duration-300">
-              <p className="font-inter text-sm text-turquesa/80 leading-relaxed">
-                <strong className="text-turquesa font-semibold">Sulfitos:</strong> nulo o mínimo · Máx 30 mg/L · Excepcional hasta 50 mg/L
+            <div className="mt-8 p-3.5 rounded-lg bg-turquesa/8 border border-turquesa/15">
+              <p className="font-inter text-[14px] leading-relaxed text-turquesa/70 font-light">
+                <strong className="text-turquesa font-medium">Sulfitos (SO2):</strong> el uso debe ser nulo o mínimo, en cantidades que no superen los 30 mg/L. En casos de niveles más elevados, siendo 50 mg/L indiferentemente del color y tipo de vino como tope máximo y excepcional, deberá ser declarado de forma transparente, quedando bajo nuestra decisión la posibilidad de participar o no en Feria Salvaje.
               </p>
             </div>
+
           </motion.div>
         </div>
       </section>
@@ -188,17 +192,20 @@ export default function Sobre() {
                 La experiencia
               </span>
               <div className="mt-4 w-12 h-0.5 bg-magenta/40" />
-              <h2 className="mt-6 font-inter text-3xl sm:text-4xl font-bold text-white leading-tight">
+              <h2 className="mt-6 font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
                 ¿Qué incluye<br />tu entrada?
               </h2>
             </div>
 
             <div className="flex flex-col justify-center">
               <p className="font-inter text-lg sm:text-xl leading-relaxed text-white/70 font-light">
-                Al comprar tu ticket contarás con una <strong className="text-white font-medium">copa personal coleccionable</strong> que te dará acceso a la degustación libre de más de 300 vinos y todos los rubros alimenticios, así como también el encuentro cara a cara con las personas que los crean.
+                La compra de tu entrada incluye una <strong className="text-white font-medium">copa personal coleccionable</strong>, la degustación libre de más de 300 vinos, otras bebidas y alimentos, así como también el encuentro cara a cara con las personas que los crean.
               </p>
               <p className="mt-6 font-inter text-lg sm:text-xl leading-relaxed text-white/70 font-light">
                 Dentro de Salvaje también se viven experiencias enriquecedoras como charlas y demostraciones en vivo.
+              </p>
+              <p className="mt-6 font-inter text-lg sm:text-xl leading-relaxed text-white/70 font-light">
+                Habrá un <strong className="text-white font-medium">patio gastronómico</strong> con stands de restaurantes porteños.
               </p>
 
               <a

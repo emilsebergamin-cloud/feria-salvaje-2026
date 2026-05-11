@@ -39,13 +39,13 @@ export default function Prensa() {
   return (
     <PageLayout>
       {/* Notas */}
-      <section className="py-20 sm:py-28 px-6">
+      <section className="pt-20 sm:pt-28 pb-10 sm:pb-14 px-6">
         <div className="max-w-6xl mx-auto">
           <div>
             <span className="font-inter text-xs font-semibold text-turquesa uppercase tracking-[0.3em]">
               Feria Salvaje en los medios
             </span>
-            <h1 className="mt-4 font-inter text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[0.95]">
+            <h1 className="mt-4 font-display text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[0.95]">
               Prensa
             </h1>
           </div>
@@ -96,15 +96,15 @@ export default function Prensa() {
       </section>
 
       {/* Contacto prensa + formulario */}
-      <section className="py-20 sm:py-28 px-6 bg-texto/[0.02] border-t border-texto/5">
+      <section className="py-14 sm:py-20 px-6 bg-texto/[0.02] border-t border-texto/5">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_auto] gap-12 items-center">
           <div>
             <span className="font-inter text-xs font-semibold text-turquesa uppercase tracking-[0.3em]">
               Contacto de prensa
             </span>
-            <h2 className="mt-4 font-inter text-3xl sm:text-4xl md:text-5xl font-black text-texto leading-[1.1]">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-black text-texto leading-[1.1]">
               ¿Querés cubrir<br />
-              <span className="text-turquesa">Feria Salvaje?</span>
+              <span className="text-turquesa italic">Feria Salvaje?</span>
             </h2>
             <p className="mt-6 font-inter text-lg text-texto/50 font-light max-w-2xl">
               Si sos periodista, medio o creador de contenido y querés cubrir la próxima edición, completá el formulario y nos ponemos en contacto.

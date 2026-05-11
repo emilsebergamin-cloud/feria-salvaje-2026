@@ -25,28 +25,18 @@ export default function Countdown() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center w-full sm:w-auto">
-      {/* Numbers */}
+    <div className="flex flex-col items-center w-full sm:w-auto gap-2">
+      <span className="font-inter text-[10px] text-white/30 uppercase tracking-[0.25em] font-medium">Faltan</span>
       <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 text-white/90">
-        <span className="font-inter text-3xl sm:text-2xl md:text-3xl font-bold tabular-nums">{time.dias}</span>
-        <span className="font-inter text-[11px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1 sm:mr-2">d</span>
-        <span className="font-inter text-3xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.horas).padStart(2, '0')}</span>
-        <span className="font-inter text-[11px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1 sm:mr-2">h</span>
-        <span className="font-inter text-3xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.minutos).padStart(2, '0')}</span>
-        <span className="font-inter text-[11px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1 sm:mr-2">m</span>
-        <span className="font-inter text-3xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.segundos).padStart(2, '0')}</span>
-        <span className="font-inter text-[11px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide">s</span>
+        <span className="font-mono text-2xl sm:text-2xl md:text-3xl font-bold tabular-nums">{time.dias}</span>
+        <span className="font-mono text-[10px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">d</span>
+        <span className="font-mono text-2xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.horas).padStart(2, '0')}</span>
+        <span className="font-mono text-[10px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">h</span>
+        <span className="font-mono text-2xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.minutos).padStart(2, '0')}</span>
+        <span className="font-mono text-[10px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">m</span>
+        <span className="font-mono text-2xl sm:text-2xl md:text-3xl font-bold tabular-nums">{String(time.segundos).padStart(2, '0')}</span>
+        <span className="font-mono text-[10px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide">s</span>
       </div>
-
-      {/* CTA */}
-      <a
-        href="https://feriasalvaje.empretienda.com.ar"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-5 w-[85vw] sm:w-auto text-center px-8 py-4 sm:py-3.5 bg-magenta text-white font-inter font-bold text-sm sm:text-sm uppercase tracking-[0.15em] rounded-full transition-all duration-300"
-      >
-        Comprá tus entradas
-      </a>
     </div>
   )
 }

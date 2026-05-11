@@ -57,20 +57,20 @@ export default function ProductoresCategoria() {
             {cat.data.length} productores
           </p>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
             {cat.data.map((p, i) => {
               const color = paletteColors[i % paletteColors.length]
               return (
                 <motion.div
                   key={p.nombre}
-                  className="rounded-xl border border-texto/5 px-5 py-4 transition-all duration-300 cursor-default group"
+                  className="rounded-xl border border-texto/5 px-3.5 py-3 sm:px-5 sm:py-4 transition-all duration-300 cursor-default group"
                   style={{ backgroundColor: 'white' }}
                   whileHover={{ y: -5, scale: 1.03, backgroundColor: color + '45' }}
+                  whileTap={{ scale: 0.97, backgroundColor: color + '45' }}
                   transition={{ duration: 0.15 }}
                 >
-                  <p className="font-inter text-sm font-semibold text-texto transition-colors duration-300">
-                    <span className="group-hover:hidden">{p.nombre}</span>
-                    <span className="hidden group-hover:inline" style={{ color }}>{p.nombre}</span>
+                  <p className="font-inter text-[13px] sm:text-sm font-semibold text-texto transition-colors duration-300">
+                    {p.nombre}
                   </p>
                   <p className="font-inter text-[11px] text-texto/35 mt-0.5">
                     {p.origen}

@@ -90,7 +90,9 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showTransparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-sm'
+        showTransparent
+          ? 'bg-black/20 backdrop-blur-sm'
+          : 'bg-white/95 backdrop-blur-md shadow-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24 py-4">
@@ -98,9 +100,9 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
         {!isHome && (
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/assets/logos/logo_completo_oscuro.svg"
+              src="/assets/logos/logotipo_oscuro_crop.svg"
               alt="Feria Salvaje"
-              className="h-14 sm:h-20 md:h-24 w-auto"
+              className="h-8 sm:h-9 md:h-10 w-auto"
             />
           </Link>
         )}
@@ -163,19 +165,52 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
               </AnimatePresence>
             </div>
           ))}
+
+          {/* Entradas — highlighted CTA */}
+          <a
+            href="https://feriasalvaje.empretienda.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`font-inter text-[13px] font-bold uppercase tracking-[0.1em] px-5 py-2 rounded-full transition-all duration-200 ${
+              showTransparent
+                ? 'bg-magenta text-white hover:bg-white hover:text-magenta'
+                : 'bg-magenta text-white hover:bg-magenta/80'
+            }`}
+          >
+            Entradas
+          </a>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile menu button — hamburger icon */}
         <button
-          className={`md:hidden flex flex-col gap-2 p-3 ${isHome ? 'ml-auto' : ''}`}
+          className={`md:hidden p-2 rounded-full transition-colors ${isHome ? 'ml-auto' : ''} ${
+            showTransparent ? 'bg-white/10 hover:bg-white/20' : 'bg-texto/5 hover:bg-texto/10'
+          }`}
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              className={`block w-6 h-[2px] rounded-full transition-all ${showTransparent ? 'bg-white' : 'bg-texto'}`}
-            />
-          ))}
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={showTransparent ? 'white' : '#131823'}
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            {mobileOpen ? (
+              <>
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </>
+            ) : (
+              <>
+                <path d="M3 7h18" />
+                <path d="M3 12h18" />
+                <path d="M3 17h18" />
+              </>
+            )}
+          </svg>
         </button>
       </div>
 
@@ -256,6 +291,18 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
                   </AnimatePresence>
                 </div>
               ))}
+
+              {/* Entradas — same as desktop */}
+              <div className="mt-2 pt-3 border-t border-texto/5">
+                <a
+                  href="https://feriasalvaje.empretienda.com.ar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-inter text-sm font-semibold uppercase tracking-wider px-3 py-2.5 rounded-lg text-magenta"
+                >
+                  Entradas
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

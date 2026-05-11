@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import Nav from '../components/sections/Nav'
+import Footer from '../components/sections/Footer'
 import MiniCountdown from '../components/ui/MiniCountdown'
 
 const edicionYears = ['2021', '2022-mendoza', '2022', '2023', '2025']
@@ -457,6 +458,7 @@ export default function EdicionAlbum() {
       </div>
 
       <MiniCountdown />
+      <Footer />
     </div>
   )
 }

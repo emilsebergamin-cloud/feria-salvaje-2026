@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+/* IBM Plex Mono — datos, line-up, countdown, acento */
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/ibm-plex-mono/IBMPlexMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/ibm-plex-mono/IBMPlexMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/ibm-plex-mono/IBMPlexMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-magenta: #BE008D;
   --color-amarillo: #FFF500;
@@ -10,7 +40,8 @@
   --color-texto: #131823;
 
   --font-inter: "Inter", sans-serif;
-  --font-space-mono: "Space Mono", monospace;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 html {
@@ -43,6 +74,9 @@ body {
   overscroll-behavior: none;
 }
 
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -58,6 +92,16 @@ body {
   }
 }
 
+/* Hero logo: no fixed aspect-ratio on mobile so it breathes naturally */
+.hero-logo {
+  aspect-ratio: auto;
+}
+@media (min-width: 640px) {
+  .hero-logo {
+    aspect-ratio: 1600 / 900;
+  }
+}
+
 @media (min-width: 640px) {
   .prod-tab {
     border: none !important;
@@ -65,6 +109,6 @@ body {
   }
   .prod-tab-active {
     background-color: var(--tab-color, #BE008D) !important;
-    color: #131823 !important;
+    color: #ffffff !important;
   }
 }

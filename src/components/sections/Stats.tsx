@@ -3,7 +3,7 @@ import { useRef, useState, useCallback, useEffect } from 'react'
 const stats = [
   { value: 90, label: 'productores', color: '#BE008D' },
   { value: 300, label: 'etiquetas', color: '#42B7A4' },
-  { value: 4000, label: 'asistentes', color: '#FFF500' },
+  { value: 4000, label: 'asistentes', color: '#E6DD00' },
   { value: 8, label: 'países', color: '#42B7A4' },
 ]
 

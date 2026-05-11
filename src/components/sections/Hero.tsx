@@ -12,7 +12,7 @@ export default function Hero() {
         backgroundColor: '#1a0a14',
       }}
     >
-      {/* Photo background — extends beyond to cover safe areas */}
+      {/* Photo background */}
       <div
         className="absolute"
         style={{
@@ -52,10 +52,12 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center sm:justify-center px-4 pt-16 sm:pt-0 pb-8 sm:pb-0">
+      {/* Content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center px-2 sm:px-4 sm:justify-center justify-start pt-[18vh] sm:pt-0 pb-8 sm:pb-0">
+        {/* Logo */}
         <motion.div
-          className="relative w-[90vw] sm:w-[85vw] max-w-[850px]"
-          style={{ aspectRatio: '1600 / 900', filter: 'drop-shadow(0 0 20px rgba(255, 245, 0, 0.15)) drop-shadow(0 0 40px rgba(255, 245, 0, 0.08))' }}
+          className="hero-logo relative w-[98vw] sm:w-[85vw] sm:max-w-[850px]"
+          style={{ filter: 'drop-shadow(0 0 20px rgba(255, 245, 0, 0.15)) drop-shadow(0 0 40px rgba(255, 245, 0, 0.08))' }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -77,14 +79,16 @@ export default function Hero() {
           />
         </motion.div>
 
+        {/* Countdown only (no CTA) */}
         <motion.div
-          className="mt-2 sm:-mt-2 w-full sm:w-auto flex flex-col items-center"
+          className="mt-8 sm:-mt-2 w-full sm:w-auto flex flex-col items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <Countdown />
         </motion.div>
+
       </div>
     </section>
   )

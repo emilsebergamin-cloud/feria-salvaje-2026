@@ -15,7 +15,7 @@ export default function ProximaEdicion() {
             5ta edición porteña
           </span>
 
-          <h2 className="mt-8 font-inter text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-texto leading-[0.9] tracking-tight">
+          <h2 className="mt-8 font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-texto leading-[0.9] tracking-tight">
             Octubre<br />
             <span className="text-turquesa">2026</span>
           </h2>
@@ -32,7 +32,7 @@ export default function ProximaEdicion() {
               Conseguí tus entradas
             </a>
             <a
-              href="#exponer"
+              href="/exponer"
               className="px-8 py-3.5 border border-texto/15 text-texto/50 font-inter font-medium text-sm uppercase tracking-wider rounded-full hover:border-magenta/30 hover:text-magenta transition-all"
             >
               Quiero exponer

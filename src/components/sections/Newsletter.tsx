@@ -3,7 +3,7 @@ export default function Newsletter() {
     <section className="py-14 sm:py-18 px-6 bg-texto/[0.03] border-t border-texto/5">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="text-center md:text-left">
-          <h2 className="font-inter text-2xl sm:text-3xl font-black text-texto leading-tight">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-texto leading-tight">
             No te pierdas nada
           </h2>
           <p className="mt-2 font-inter text-sm text-texto/40 font-light">

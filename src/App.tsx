@@ -9,6 +9,7 @@ import Prensa from './pages/Prensa'
 import Exponer from './pages/Exponer'
 import LineUp from './pages/LineUp'
 import EdicionAlbum from './pages/EdicionAlbum'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/ediciones/:year" element={<EdicionAlbum />} />
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/exponer" element={<Exponer />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

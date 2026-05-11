@@ -11,7 +11,7 @@ export default function ProductoresPage() {
             <span className="font-inter text-xs font-semibold text-turquesa uppercase tracking-[0.3em]">
               Quiénes participaron
             </span>
-            <h1 className="mt-4 font-inter text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[0.95]">
+            <h1 className="mt-4 font-display text-4xl sm:text-5xl md:text-7xl font-black text-texto leading-[0.95]">
               Productores
             </h1>
             <p className="mt-4 font-inter text-lg text-texto/50 font-light max-w-2xl">

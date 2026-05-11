@@ -15,7 +15,7 @@ export default function Ediciones() {
           <span className="font-inter text-xs font-semibold text-magenta uppercase tracking-[0.3em]">
             Nuestra historia
           </span>
-          <h2 className="mt-4 font-inter text-4xl sm:text-5xl md:text-6xl font-extrabold text-texto leading-tight">
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold text-texto leading-tight">
             Ediciones anteriores
           </h2>
         </div>

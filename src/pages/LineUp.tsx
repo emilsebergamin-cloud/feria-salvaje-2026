@@ -15,7 +15,7 @@ export default function LineUp() {
               5ta edición · Octubre 2026
             </span>
 
-            <h1 className="mt-6 font-inter text-4xl sm:text-5xl md:text-8xl font-black text-texto leading-[0.9]">
+            <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-8xl font-black text-texto leading-[0.9]">
               Line-up
             </h1>
           </motion.div>

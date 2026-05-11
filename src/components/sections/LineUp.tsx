@@ -11,7 +11,7 @@ export default function LineUp() {
             Productores confirmados
           </span>
 
-          <h2 className="mt-8 font-inter text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight">
+          <h2 className="mt-8 font-display text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight">
             Line Up
           </h2>
         </div>
