@@ -181,36 +181,17 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
           </a>
         </div>
 
-        {/* Mobile menu button — hamburger icon */}
+        {/* Mobile menu button */}
         <button
-          className={`md:hidden p-2 rounded-full transition-colors ${isHome ? 'ml-auto' : ''} ${
-            showTransparent ? 'bg-white/10 hover:bg-white/20' : 'bg-texto/5 hover:bg-texto/10'
-          }`}
+          className={`md:hidden p-3 ${isHome ? 'ml-auto' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={showTransparent ? 'white' : '#131823'}
-            strokeWidth="2"
-            strokeLinecap="round"
+          <span
+            className={`font-inter text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${showTransparent ? 'text-white' : 'text-texto'}`}
           >
-            {mobileOpen ? (
-              <>
-                <path d="M18 6L6 18" />
-                <path d="M6 6l12 12" />
-              </>
-            ) : (
-              <>
-                <path d="M3 7h18" />
-                <path d="M3 12h18" />
-                <path d="M3 17h18" />
-              </>
-            )}
-          </svg>
+            {mobileOpen ? 'Cerrar' : 'Menú'}
+          </span>
         </button>
       </div>
 
