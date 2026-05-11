@@ -26,7 +26,7 @@ export default function Countdown() {
 
   return (
     <div className="flex flex-col items-center w-full sm:w-auto gap-2">
-      <span className="font-inter text-[10px] text-white/30 uppercase tracking-[0.25em] font-medium">Faltan</span>
+      <span className="font-inter text-[11px] sm:text-xs text-white/50 uppercase tracking-[0.3em] font-medium">5ta edición en</span>
       <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 text-white/90">
         <span className="font-mono text-2xl sm:text-2xl md:text-3xl font-bold tabular-nums">{time.dias}</span>
         <span className="font-mono text-[10px] sm:text-[10px] font-medium text-white/30 uppercase tracking-wide mr-1.5 sm:mr-2">d</span>
