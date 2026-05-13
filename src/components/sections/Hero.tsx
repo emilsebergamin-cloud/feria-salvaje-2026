@@ -36,7 +36,7 @@ export default function Hero() {
           left: '-16px',
           right: '-16px',
           bottom: 'calc(-1 * env(safe-area-inset-bottom, 16px) - 16px)',
-          backgroundColor: 'rgba(0,0,0,0.65)',
+          backgroundColor: 'rgba(0,0,0,0.78)',
         }}
       />
 
@@ -90,7 +90,7 @@ export default function Hero() {
           <Countdown />
           <Link
             to="/sobre"
-            className="font-inter text-[13px] sm:text-sm text-white/60 uppercase tracking-[0.2em] font-medium border border-white/30 rounded-full px-7 py-3 hover:text-white/90 hover:border-white/45 transition-all duration-300"
+            className="font-inter text-[13px] sm:text-sm text-white/80 uppercase tracking-[0.2em] font-medium border border-white/40 rounded-full px-7 py-3 hover:text-white hover:border-white/60 transition-all duration-300"
           >
             Conocé la feria
           </Link>
