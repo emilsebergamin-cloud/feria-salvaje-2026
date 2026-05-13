@@ -90,7 +90,7 @@ export default function Hero() {
           <Countdown />
           <Link
             to="/sobre"
-            className="font-inter text-[11px] sm:text-xs text-white/35 uppercase tracking-[0.2em] font-medium border border-white/10 rounded-full px-5 py-2 hover:text-white/70 hover:border-white/25 transition-all duration-300"
+            className="font-inter text-[13px] sm:text-sm text-white/60 uppercase tracking-[0.2em] font-medium border border-white/30 rounded-full px-7 py-3 hover:text-white/90 hover:border-white/45 transition-all duration-300"
           >
             Conocé la feria
           </Link>

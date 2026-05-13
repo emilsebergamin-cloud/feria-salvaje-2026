@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-
-const TARGET_DATE = new Date('2026-10-10T00:00:00-03:00')
+import { EVENT_DATE, TICKET_URL } from '../../lib/config'
 
 function calcDays() {
-  const diff = TARGET_DATE.getTime() - new Date().getTime()
+  const diff = EVENT_DATE.getTime() - new Date().getTime()
   if (diff <= 0) return 0
   return Math.floor(diff / (1000 * 60 * 60 * 24))
 }
@@ -18,7 +17,7 @@ export default function MiniCountdown() {
 
   return (
     <a
-      href="https://feriasalvaje.empretienda.com.ar"
+      href={TICKET_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-40 flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-full bg-texto/85 backdrop-blur-md shadow-lg cursor-pointer hover:bg-magenta/90 transition-colors duration-300"

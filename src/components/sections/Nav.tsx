@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { TICKET_URL } from '../../lib/config'
 
 type SubItem = { label: string; to: string; anchor?: boolean }
 type NavLink = { label: string; to: string; sub?: SubItem[] }
@@ -95,14 +96,14 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
           : 'bg-white/95 backdrop-blur-md shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24 py-4">
+      <div className="px-6"><div className="max-w-6xl mx-auto flex items-center justify-between h-16 py-3">
         {/* Logo — only visible on internal pages */}
         {!isHome && (
           <Link to="/" className="flex-shrink-0">
             <img
               src="/assets/logos/logotipo_oscuro_crop.svg"
               alt="Feria Salvaje"
-              className="h-8 sm:h-9 md:h-10 w-auto"
+              className="h-[22px] w-auto"
             />
           </Link>
         )}
@@ -120,7 +121,7 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
             >
               <Link
                 to={link.to}
-                className={`font-inter text-[13px] font-medium uppercase tracking-[0.1em] px-4 py-2 rounded-full transition-all duration-200 ${
+                className={`font-inter text-[11px] font-medium uppercase tracking-[0.1em] px-3 py-1.5 rounded-full transition-all duration-200 ${
                   location.pathname === link.to || location.pathname.startsWith(link.to + '/')
                     ? 'bg-amarillo text-texto'
                     : showTransparent
@@ -168,10 +169,10 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
 
           {/* Entradas — highlighted CTA */}
           <a
-            href="https://feriasalvaje.empretienda.com.ar"
+            href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`font-inter text-[13px] font-bold uppercase tracking-[0.1em] px-5 py-2 rounded-full transition-all duration-200 ${
+            className={`font-inter text-[11px] font-bold uppercase tracking-[0.1em] px-4 py-1.5 rounded-full transition-all duration-200 ${
               showTransparent
                 ? 'bg-magenta text-white hover:bg-white hover:text-magenta'
                 : 'bg-magenta text-white hover:bg-magenta/80'
@@ -193,7 +194,7 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
             {mobileOpen ? 'Cerrar' : 'Menú'}
           </span>
         </button>
-      </div>
+      </div></div>
 
       {/* Mobile drawer */}
       <AnimatePresence>
@@ -276,7 +277,7 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
               {/* Entradas — same as desktop */}
               <div className="mt-2 pt-3 border-t border-texto/5">
                 <a
-                  href="https://feriasalvaje.empretienda.com.ar"
+                  href={TICKET_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-inter text-sm font-semibold uppercase tracking-wider px-3 py-2.5 rounded-lg text-magenta"

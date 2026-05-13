@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { TICKET_URL } from '../../lib/config'
 
 const navLinks = [
   { label: 'Nosotros', to: '/sobre' },
@@ -37,7 +38,7 @@ export default function Footer() {
                 </Link>
               ))}
               <a
-                href="https://feriasalvaje.empretienda.com.ar"
+                href={TICKET_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-inter text-xs text-magenta hover:text-white transition-colors py-1"

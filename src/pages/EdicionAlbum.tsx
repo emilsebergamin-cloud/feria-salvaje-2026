@@ -19,7 +19,7 @@ const edicionesData: Record<string, { title: string; desc: string; color: string
     title: '2022',
     desc: '2da edición · Buenos Aires',
     color: '#42B7A4',
-    fotos: Array.from({ length: 16 }, (_, i) =>
+    fotos: Array.from({ length: 34 }, (_, i) =>
       `/assets/ediciones/2022/${String(i + 1).padStart(2, '0')}.webp`
     ),
   },
@@ -27,7 +27,7 @@ const edicionesData: Record<string, { title: string; desc: string; color: string
     title: '2022',
     desc: 'Edición Mendoza',
     color: '#252653',
-    fotos: Array.from({ length: 16 }, (_, i) =>
+    fotos: Array.from({ length: 44 }, (_, i) =>
       `/assets/ediciones/2022-mendoza/${String(i + 1).padStart(2, '0')}.webp`
     ),
   },
@@ -35,7 +35,7 @@ const edicionesData: Record<string, { title: string; desc: string; color: string
     title: '2023',
     desc: '3ra edición',
     color: '#BE008D',
-    fotos: Array.from({ length: 16 }, (_, i) =>
+    fotos: Array.from({ length: 32 }, (_, i) =>
       `/assets/ediciones/2023/${String(i + 1).padStart(2, '0')}.webp`
     ),
   },
@@ -43,7 +43,7 @@ const edicionesData: Record<string, { title: string; desc: string; color: string
     title: '2025',
     desc: '4ta edición porteña',
     color: '#FFF500',
-    fotos: Array.from({ length: 16 }, (_, i) =>
+    fotos: Array.from({ length: 56 }, (_, i) =>
       `/assets/ediciones/2025/${String(i + 1).padStart(2, '0')}.webp`
     ),
   },
@@ -81,9 +81,7 @@ function PageImage({ src, side }: { src?: string; side: 'left' | 'right' }) {
       {src ? (
         <img src={src} alt="" className="w-full h-full object-cover" />
       ) : (
-        <div className="w-full h-full flex items-center justify-center bg-[#ede9e3]">
-          <span className="font-inter text-sm text-texto/15 italic">Fin del álbum</span>
-        </div>
+        <div className="w-full h-full bg-[#ede9e3]" />
       )}
     </div>
   )
@@ -189,6 +187,7 @@ export default function EdicionAlbum() {
   const shadowIntensity = Math.abs(flipAngle) / 180 * 0.35
 
   return (
+    <>
     <div className="md:h-screen flex flex-col md:overflow-hidden bg-[#f8f6f2]">
       <Nav />
 
@@ -296,7 +295,7 @@ export default function EdicionAlbum() {
               <button
                 onClick={() => setMobileIndex(i => Math.max(0, i - 1))}
                 disabled={mobileIndex === 0}
-                className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 disabled:opacity-20 disabled:cursor-default shadow-md"
+                className="w-10 h-10 rounded-full bg-white border-2 border-texto/25 flex items-center justify-center text-texto/70 disabled:opacity-20 disabled:cursor-default shadow-lg"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M15 18l-6-6 6-6" />
@@ -308,7 +307,7 @@ export default function EdicionAlbum() {
               <button
                 onClick={() => setMobileIndex(i => Math.min(edicion.fotos.length - 1, i + 1))}
                 disabled={mobileIndex >= edicion.fotos.length - 1}
-                className="w-10 h-10 rounded-full bg-white border-2 border-texto/15 flex items-center justify-center text-texto/50 disabled:opacity-20 disabled:cursor-default shadow-md"
+                className="w-10 h-10 rounded-full bg-white border-2 border-texto/25 flex items-center justify-center text-texto/70 disabled:opacity-20 disabled:cursor-default shadow-lg"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M9 18l6-6-6-6" />
@@ -337,7 +336,7 @@ export default function EdicionAlbum() {
               <button
                 onClick={goPrev}
                 disabled={spread === 0 || isFlipping}
-                className="hidden md:flex w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-texto/15 items-center justify-center text-texto/50 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default disabled:hover:bg-white disabled:hover:text-texto/40 disabled:hover:border-texto/10 flex-shrink-0 shadow-md"
+                className="hidden md:flex w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-texto/25 items-center justify-center text-texto/70 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default disabled:hover:bg-white disabled:hover:text-texto/40 disabled:hover:border-texto/10 flex-shrink-0 shadow-lg"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M15 18l-6-6 6-6" />
@@ -442,7 +441,7 @@ export default function EdicionAlbum() {
               <button
                 onClick={goNext}
                 disabled={spread >= totalSpreads - 1 || isFlipping}
-                className="hidden md:flex w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-texto/15 items-center justify-center text-texto/50 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default disabled:hover:bg-white disabled:hover:text-texto/40 disabled:hover:border-texto/10 flex-shrink-0 shadow-md"
+                className="hidden md:flex w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-texto/25 items-center justify-center text-texto/70 hover:bg-magenta hover:text-white hover:border-magenta transition-all disabled:opacity-20 disabled:cursor-default disabled:hover:bg-white disabled:hover:text-texto/40 disabled:hover:border-texto/10 flex-shrink-0 shadow-lg"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M9 18l6-6-6-6" />
@@ -458,7 +457,8 @@ export default function EdicionAlbum() {
       </div>
 
       <MiniCountdown />
-      <Footer />
     </div>
+    <Footer />
+    </>
   )
 }

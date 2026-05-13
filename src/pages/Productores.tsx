@@ -20,7 +20,7 @@ export default function ProductoresPage() {
           </div>
 
           <motion.img
-            src="/assets/ilustracion-persona-botella-negro.png"
+            src="/assets/ilustracion-persona-botella-negro.webp"
             alt="Persona caminando con una botella de vino"
             className="hidden md:block absolute right-0 -top-20 h-[560px] lg:h-[620px] w-auto object-contain"
             initial={{ x: 200, opacity: 0 }}

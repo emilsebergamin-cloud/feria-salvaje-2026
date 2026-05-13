@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import PageLayout from '../components/sections/PageLayout'
 import Stats from '../components/sections/Stats'
+import { TICKET_URL } from '../lib/config'
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -65,7 +66,7 @@ export default function Sobre() {
             className="font-inter text-xl sm:text-2xl leading-relaxed text-texto/70 font-light"
             {...fadeUp}
           >
-            Un espacio único para conocer vinos únicos. Donde la curiosidad y el encuentro son protagonistas. Donde potenciamos lo humano, sensible y colectivo.
+            Salvaje es un espacio de encuentro alrededor del vino natural, la sensibilidad y la curiosidad. Un lugar donde el disfrute convive con las ideas, los sabores con las historias y lo humano vuelve a ocupar el centro de la creatividad y el goce.
           </motion.p>
 
           <motion.div
@@ -165,7 +166,7 @@ export default function Sobre() {
             </p>
 
             <div className="mt-8 p-3.5 rounded-lg bg-turquesa/8 border border-turquesa/15">
-              <p className="font-inter text-[14px] leading-relaxed text-turquesa/70 font-light">
+              <p className="font-inter text-[14px] leading-relaxed text-turquesa/90 font-light">
                 <strong className="text-turquesa font-medium">Sulfitos (SO2):</strong> el uso debe ser nulo o mínimo, en cantidades que no superen los 30 mg/L. En casos de niveles más elevados, siendo 50 mg/L indiferentemente del color y tipo de vino como tope máximo y excepcional, deberá ser declarado de forma transparente, quedando bajo nuestra decisión la posibilidad de participar o no en Feria Salvaje.
               </p>
             </div>
@@ -209,7 +210,7 @@ export default function Sobre() {
               </p>
 
               <a
-                href="https://feriasalvaje.empretienda.com.ar" target="_blank" rel="noopener noreferrer"
+                href={TICKET_URL} target="_blank" rel="noopener noreferrer"
                 className="inline-block mt-10 w-full sm:w-auto text-center px-8 py-4 sm:py-3.5 bg-amarillo text-texto font-inter font-semibold text-sm uppercase tracking-wider rounded-full hover:bg-magenta hover:text-white transition-colors sm:self-start"
               >
                 Conseguí tus entradas

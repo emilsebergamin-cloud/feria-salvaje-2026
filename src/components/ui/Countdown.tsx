@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-
-const TARGET_DATE = new Date('2026-10-10T00:00:00-03:00')
+import { EVENT_DATE } from '../../lib/config'
 
 function calcTimeLeft() {
   const now = new Date()
-  const diff = TARGET_DATE.getTime() - now.getTime()
+  const diff = EVENT_DATE.getTime() - now.getTime()
 
   if (diff <= 0) return { dias: 0, horas: 0, minutos: 0, segundos: 0 }
 

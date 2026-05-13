@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://feriasalvaje.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://feriasalvaje.com/sobre</loc><priority>0.8</priority></url>
+  <url><loc>https://feriasalvaje.com/productores</loc><priority>0.8</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones</loc><priority>0.7</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones/2021</loc><priority>0.5</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones/2022-mendoza</loc><priority>0.5</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones/2022</loc><priority>0.5</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones/2023</loc><priority>0.5</priority></url>
+  <url><loc>https://feriasalvaje.com/ediciones/2025</loc><priority>0.5</priority></url>
+  <url><loc>https://feriasalvaje.com/lineup</loc><priority>0.7</priority></url>
+  <url><loc>https://feriasalvaje.com/prensa</loc><priority>0.6</priority></url>
+</urlset>
