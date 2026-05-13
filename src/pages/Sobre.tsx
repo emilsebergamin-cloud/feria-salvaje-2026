@@ -14,7 +14,7 @@ export default function Sobre() {
   return (
     <PageLayout>
       {/* Hero — foto full width con overlay */}
-      <section className="group relative h-[50vh] sm:h-[70vh] min-h-[320px] sm:min-h-[480px] max-h-[70vh] overflow-hidden">
+      <section className="group relative h-[50vh] sm:h-[70vh] min-h-[320px] sm:min-h-[480px] max-h-[70vh] overflow-hidden -mt-20">
         <img
           src="/assets/fotos/nosotros-comunidad.webp"
           alt="Comunidad degustando vinos en Feria Salvaje"
