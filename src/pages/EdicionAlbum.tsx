@@ -236,11 +236,11 @@ export default function EdicionAlbum() {
         </div>
 
         {/* Desktop header */}
-        <div className="hidden md:flex items-center justify-between px-10 pb-4 flex-shrink-0">
+        <div className="hidden md:flex pb-4 flex-shrink-0 px-6"><div className="max-w-6xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
               to="/ediciones"
-              className="font-inter text-[11px] font-semibold text-texto/30 uppercase tracking-[0.15em] hover:text-magenta transition-colors flex items-center gap-1.5"
+              className="font-inter text-[11px] font-semibold text-texto/30 uppercase tracking-[0.15em] hover:text-magenta transition-colors flex items-center gap-1 -ml-1"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M15 18l-6-6 6-6" />
@@ -279,7 +279,7 @@ export default function EdicionAlbum() {
               </svg>
             </button>
           </div>
-        </div>
+        </div></div>
 
         {/* Mobile carousel */}
         {edicion.fotos.length > 0 && (
