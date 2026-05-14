@@ -52,13 +52,14 @@ export default function Prensa() {
 
           <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             {notas.map((nota) => (
-              <motion.div key={nota.medio} whileHover={{ y: -4 }}>
-                <a
-                  href={nota.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-2xl aspect-[3/4] relative overflow-hidden group transition-all duration-300 shadow-md"
-                >
+              <motion.a
+                key={nota.medio}
+                href={nota.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl aspect-[3/4] relative overflow-hidden group transition-all duration-300 shadow-md"
+                whileHover={{ y: -4 }}
+              >
                   <img
                     src={nota.img}
                     alt=""
@@ -88,8 +89,7 @@ export default function Prensa() {
                       </div>
                     </div>
                   </div>
-                </a>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
